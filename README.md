@@ -1,12 +1,10 @@
 # Actions-OpenWrt
 
-Build OpenWrt and publish docker image using GitHub Actions
+Build OpenWrt image using GitHub Actions （注：此仓库FOK于 HoldOnBro 大佬）
 
 Credit to ***P3TERX***, ***bin20088*** and ***flippy***，this is just a combination of their work.
 
-The firmwares released are for S9xxx devices, Newifi_D2, G-Dock, amd64 and the J4125 with rtl8125 ethernet device.
-
-Feel free to [fork](https://github.com/HoldOnBro/Actions-OpenWrt/generate) or just pull [my docker image](https://hub.docker.com/r/minirailgun/openwrt-aarch64/tags) to save time, it will be updated everyday.
+The firmwares released are for S9xxx devices, amd64 device.
 
 ## How to Use
 
@@ -46,19 +44,6 @@ You need to add 5(at least the first one) secrets to make Actions work properly.
 ~~And the left ones named as ``F-*`` are flowoffload type, stable but a little bit slower.~~
   
 ~~Choose ``S-*`` type if you feel adventurous or use the other ones for convenience.~~
-
-### Newifi_D2
-  
-  1. **Lite Version**: A light fw for NewifiD2.
-  
-  2. **Normal Version**: based on **lite**, added TUN in SSRPlus and UnblockNetease(with **NodeJS**), jd-dailybonus.
-  
-  Just choose the one suits your need.
-  
-~~BTW, if you encounter any hardware instability problems like auto-reboot for no reason, having no access to Internet,~~
-  ~~**TURN OFF** the **HWNAT** under ``network->hwacc``.~~
-  ~~Refer to [1](https://github.com/coolsnowwolf/lede/issues/4531), [2](https://github.com/openwrt/openwrt/pull/1916) for more details.~~
-  ~~Or you can use the [PandoraBox](http://downloads.pangubox.com:6380/), it has **NO** HWNAT issues.~~
 
 ## Acknowledgments
 
