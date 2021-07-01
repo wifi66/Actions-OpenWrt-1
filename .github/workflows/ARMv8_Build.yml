@@ -2,6 +2,7 @@ name: ARMv8_Build
 
 on:
   repository_dispatch:
+  workflow_dispatch:
 #  release:
 #    types: published
   schedule:
@@ -18,7 +19,6 @@ env:
   MRG_ADD_SH: aarch64/ARMv8.sh
   Update_Ver_SH: aarch64/autoVersion.sh
   Get_Imgs_SH: aarch64/getImgs.sh
-  DOCKER_BUILD_SH: buildImage.sh
 #   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
@@ -83,7 +83,7 @@ jobs:
         sudo chmod +x ./respawn_mks.sh
         sudo ./respawn_mks.sh
         cd /opt/openwrt
-        sudo wget $(curl -s https://api.github.com/repos/HoldOnBro/Actions-OpenWrt/releases/34554768 | grep browser_download_url | cut -d '"' -f 4)
+        sudo wget $(curl -s https://api.github.com/repos/rq1025330/Actions-OpenWrt/releases/34554768 | grep browser_download_url | cut -d '"' -f 4)
         chmod +x $GITHUB_WORKSPACE/$Update_Ver_SH
         sudo $GITHUB_WORKSPACE/$Update_Ver_SH
         #sudo ./mk_rk3328_beikeyun.sh
