@@ -1,0 +1,75 @@
+#
+# Copyright (c) 2019-2021 P3TERX <https://p3terx.com>
+#
+# This is free software, licensed under the MIT License.
+# See /LICENSE for more information.
+#
+# https://github.com/P3TERX/Actions-OpenWrt
+# File: .github/workflows/update-checker.yml
+# Description: Source code update checker
+#
+
+name: Update Checker
+
+env:
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
+  SCKEY: ${{ secrets.SERVERCHAN_TOKEN_PAT }}
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 */18 * * *
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Get Commit Hash
+      id: getHash
+      run: |
+        git clone --depth 1 $REPO_URL -b $REPO_BRANCH .
+        echo "::set-output name=commitHash::$(git rev-parse HEAD)"
+
+    - name: Compare Commit Hash
+      id: cacheHash
+      uses: actions/cache@v2
+      with:
+        path: .commitHash
+        key: HEAD-${{ steps.getHash.outputs.commitHash }}
+
+    - name: Save New Commit Hash
+      if: steps.cacheHash.outputs.cache-hit != 'true'
+      run: |
+        echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
+
+    - name: Trigger build
+      if: steps.cacheHash.outputs.cache-hit != 'true'
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.ACTIONS_TRIGGER_PAT }}
+        event-type: Source Code Update
+
+    - name: Delete workflow runs
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        retain_days: 1
+        keep_minimum_runs: 1
+
+    - name: WeChat notification
+      if: env.SCKEY && steps.cacheHash.outputs.cache-hit != 'true'
+      run: |
+        echo "Sending message to WeChat..."
+        curl -s "https://sc.ftqq.com/${SCKEY}.send?text=Lean源码更新，开始编译底包" -d "&desp=*检查时间：*\`$(date "+%Y%m%d-%H%M%S")\`"
+        
+    - name: Telegram notification
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO_PAT }}
+        token: ${{ secrets.TELEGRAM_TOKEN_PAT }}
+        message: |
+          编译时间：${{ env.DATE }}
+          lede更新信息：${{ env.useVersionInfo }}
+          ${{ env.PRODUCT_NAME }}打包完成
