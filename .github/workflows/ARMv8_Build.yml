@@ -119,7 +119,7 @@ jobs:
         sudo cp ./*AllPackages.tar.gz ./tmp/
         #sudo cp ./files/update*.sh ./tmp/
         sudo cp files/update-amlogic-openwrt.sh tmp/update-amlogic-openwrt.sh
-        sudo cp files/update-to-emmc.sh tmp/update-to-emmc.sh        
+        sudo cp files/update-to-emmc.sh tmp/update-to-emmc.sh
         echo "::set-output name=status::success"
 
     - name: Organize files
