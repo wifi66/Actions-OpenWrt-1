@@ -116,7 +116,8 @@ jobs:
         #sudo ./mk_h6_vplus_basic.sh
         #sudo ./mk_h6_vplus_plus.sh
         #sudo ./mk_h6_vplus_plusplus.sh
-        sudo cp ./*AllPackages.tar.gz ./tmp/
+        #sudo cp ./*AllPackages.tar.gz ./tmp/
+        sudo cp ./S-AllPackages.tar.gz ./tmp/
         #sudo cp ./files/update*.sh ./tmp/
         sudo cp files/update-amlogic-openwrt.sh tmp/update-amlogic-openwrt.sh
         sudo cp files/update-to-emmc.sh tmp/update-to-emmc.sh
