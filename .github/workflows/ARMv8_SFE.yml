@@ -167,8 +167,8 @@ jobs:
     - name: Telegram notification
       uses: appleboy/telegram-action@master
       with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
+        to: ${{ secrets.TELEGRAM_TO_PAT}}
+        token: ${{ secrets.TELEGRAM_TOKEN_PAT }}
         message: |
           编译时间：${{ env.DATE }}
           lede更新信息：${{ env.useVersionInfo }}
