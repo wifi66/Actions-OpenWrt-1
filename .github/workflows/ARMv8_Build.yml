@@ -155,7 +155,7 @@ jobs:
         allowUpdates: true
         tag: ${{ env.FILE_NAME }}
         commit: master
-        token: ${{ secrets.RELEASES_TOKEN_PAT }}
+        token: ${{ secrets.RELEASES_TOKEN }}
         body: |
           自61版之后就是最新的openwrt-21.02了，由于缺乏必要的测试，不保证可用性，出现任何问题请自行排查，或等待上游稳定后重新刷入。
 
@@ -174,8 +174,8 @@ jobs:
     - name: Telegram notification
       uses: appleboy/telegram-action@master
       with:
-        to: ${{ secrets.TELEGRAM_TO_PAT }}
-        token: ${{ secrets.TELEGRAM_TOKEN_PAT }}
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
           编译时间：${{ env.DATE }}
           lede更新信息：${{ env.useVersionInfo }}

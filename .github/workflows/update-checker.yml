@@ -14,7 +14,6 @@ name: Update Checker
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  SCKEY: ${{ secrets.SERVERCHAN_TOKEN_PAT }}
 
 on:
   workflow_dispatch:
@@ -62,4 +61,4 @@ jobs:
       if: env.SCKEY && steps.cacheHash.outputs.cache-hit != 'true'
       run: |
         echo "Sending message to WeChat..."
-        curl -s "https://sc.ftqq.com/${SCKEY}.send?text=Lean源码更新，开始编译底包" -d "&desp=*检查时间：*\`$(date "+%Y%m%d-%H%M%S")\`"
+        curl -s "https://sc.ftqq.com/${{ secrets.SERVERCHAN_TOKEN }}.send?text=Lean源码更新，开始编译底包" -d "&desp=*检查时间：*\`$(date "+%Y%m%d-%H%M%S")\`"
