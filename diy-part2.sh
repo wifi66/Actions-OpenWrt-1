@@ -16,13 +16,6 @@ rm -rf package/lean/luci-app-wrtbwmon
 rm -rf feeds/packages/net/smartdns
 #添加额外软件包
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-
-#replace mirrors
-#rm -rf ./include
-#rm -rf ./ scripts
-#svn co https://github.com/immortalwrt/immortalwrt/trunk/include
-#svn co https://github.com/immortalwrt/immortalwrt/trunk/scripts
-
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/luci-app-jd-dailybonus
 git clone https://github.com/jerrykuku/luci-app-ttnode.git package/luci-app-ttnode
 git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
@@ -35,9 +28,6 @@ git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
 #git clone https://github.com/garypang13/luci-app-dnsfilter package/luci-app-dnsfilter
 git clone https://github.com/project-lede/luci-app-godproxy package/luci-app-godproxy
 
-#git clone https://github.com/vernesong/OpenClash.git package/OpenClash
-#cp -r package/OpenClash/luci-app-openclash package/
-#rm -rf package/OpenClash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 # 编译 po2lmo (如果有po2lmo可跳过)
 pushd package/luci-app-openclash/tools/po2lmo
@@ -66,11 +56,9 @@ svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/l
 svn co https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/gost package/gost
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
-# cd package/luci-app-serverchan && git reset --hard 6387b3b47b03d95d3f3bcd42ff98db5bb84fd056 && git pull && cd ../..
 svn co https://github.com/brvphoenix/wrtbwmon/trunk/wrtbwmon package/wrtbwmon
 git clone https://github.com/brvphoenix/luci-app-wrtbwmon
 cd luci-app-wrtbwmon
-# git reset --hard ff7773abbf71120fc39a276393b29ba47353a7e2
 cp -r luci-app-wrtbwmon ../package/
 cd ..
 # themes
@@ -107,17 +95,11 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns package/smartd
 svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le package/smartdns-le
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/luci-app-smartdns
 
-#git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
-#git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
+
 svn co https://github.com/linkease/ddnsto-openwrt/trunk/ddnsto package/ddnsto
 svn co https://github.com/linkease/ddnsto-openwrt/trunk/luci-app-ddnsto package/luci-app-ddnsto
-#添加ksmbd
-#svn co https://github.com/openwrt/luci/trunk/applications/luci-app-ksmbd package/luci-app-ksmbd
+
 #添加udp2raw
-#git clone https://github.com/sensec/openwrt-udp2raw package/openwrt-udp2raw
-#git clone https://github.com/sensec/luci-app-udp2raw package/luci-app-udp2raw
-#sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=f2f90a9a150be94d50af555b53657a2a4309f287/" package/openwrt-udp2raw/Makefile
-#sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=20200920\.0/" package/openwrt-udp2raw/Makefile
 svn co https://github.com/immortalwrt/packages/branches/openwrt-21.02/net/udp2raw-tunnel package/udp2raw-tunnel
 svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-udp2raw package/luci-app-udp2raw
 #添加luci-app-advanced
@@ -133,8 +115,6 @@ find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/include\ \.\.\/\.\.\/lang\/golang\/golang\-package\.mk/include \$(TOPDIR)\/feeds\/packages\/lang\/golang\/golang\-package\.mk/g' {}
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHREPO/PKG_SOURCE_URL:=https:\/\/github\.com/g' {}
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=\@GHCODELOAD/PKG_SOURCE_URL:=https:\/\/codeload\.github\.com/g' {}
-#svn co https://github.com/immortalwrt/immortalwrt/trunk/include/download.mk include/download.mk
-#svn co https://github.com/immortalwrt/immortalwrt/trunk/include/package-immortalwrt.mk include/package-immortalwrt.mk
 
 #readd cpufreq for aarch64
 sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci-app-cpufreq/Makefile
@@ -149,11 +129,6 @@ find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-vssr/Makefile" | xargs -i 
 #find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
 #find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
 find package/luci-app-bypass/* -maxdepth 8 -path "*" | xargs -i sed -i 's/smartdns-le/smartdns/g' {}
-
-#temp fix for dnsforwarder
-#sed -i "s/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/github\.com\/1715173329\/dnsforwarder\.git/" package/lean/dnsforwarder/Makefile
-#sed -i "s/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=587e61ae4d75dc976f538088b715a3c8ee26c144/" package/lean/dnsforwarder/Makefile
-#sed -i "s/\ \ URL:=.*/\ \ URL:=https:\/\/github\.com\/1715173329\/dnsforwarder/" package/lean/dnsforwarder/Makefile
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
