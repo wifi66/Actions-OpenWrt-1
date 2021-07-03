@@ -14,7 +14,6 @@ name: Update Checker
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  SCKEY: ${{ secrets.SERVERCHAN }}
 
 on:
   workflow_dispatch:
@@ -57,9 +56,9 @@ jobs:
       with:
         retain_days: 1
         keep_minimum_runs: 1
-
+        
     - name: WeChat notification
-      if: env.SCKEY && steps.cacheHash.outputs.cache-hit != 'true'
+      if: steps.cacheHash.outputs.cache-hit != 'true'
       run: |
         echo "Sending message to WeChat..."
-        curl -s "https://sc.ftqq.com/${{ secrets.SERVERCHAN }}.send?text=Lean源码更新，开始编译底包" -d "&desp=*检查时间：*\`$(date "+%Y%m%d-%H%M%S")\`"
+        curl -s "https://sc.ftqq.com/${{ secrets.SERVERCHAN }}.send?text=Lean源码更新，开始编译低包" -d "&desp=*检查时间：*\`$(date "+%Y%m%d-%H%M%S")\`"
