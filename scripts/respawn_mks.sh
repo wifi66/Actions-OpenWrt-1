@@ -31,6 +31,45 @@ find ./* -maxdepth 1 -path "*_plusplus.sh" | xargs -i sed -i 's/make\.env/makepl
 find ./*_basic.sh ./*_plus.sh ./*_plusplus.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/OP_ROOT_TGZ=\"openwrt/OP_ROOT_TGZ=\"F-openwrt/g' {}
 find ./*_basic.sh ./*_plus.sh ./*_plusplus.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/TGT_IMG=\"\${WORK_DIR}\/openwrt/TGT_IMG=\"\${WORK_DIR}\/F-openwrt/g' {}
 
+#用MY打包
+find ./mk_s905d_n1.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/OP_ROOT_TGZ=\"openwrt/OP_ROOT_TGZ=\"MY-openwrt/g' {}
+find ./mk_s905d_n1.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/TGT_IMG=\"\${WORK_DIR}\/openwrt/TGT_IMG=\"\${WORK_DIR}\/MY-openwrt/g' {}
+
+find ./mk_s905x3_multi.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/OP_ROOT_TGZ=\"openwrt/OP_ROOT_TGZ=\"MY-openwrt/g' {}
+find ./mk_s905x3_multi.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/TGT_IMG=\"\${WORK_DIR}\/openwrt/TGT_IMG=\"\${WORK_DIR}\/MY-openwrt/g' {}
+
+
+#sudo ./mk_rk3328_beikeyun.sh
+#sudo ./mk_rk3328_beikeyun_basic.sh
+#sudo ./mk_rk3328_beikeyun_plus.sh
+#sudo ./mk_rk3328_beikeyun_plusplus.sh
+#sudo ./mk_rk3328_l1pro.sh
+#sudo ./mk_rk3328_l1pro_basic.sh
+#sudo ./mk_rk3328_l1pro_plus.sh
+#sudo ./mk_rk3328_l1pro_plusplus.sh
+#sudo ./mk_s905d_n1.sh
+#sudo ./mk_s905d_n1_basic.sh
+#sudo ./mk_s905d_n1_plus.sh
+#sudo ./mk_s905d_n1_plusplus.sh
+#sudo ./mk_s905x2_x96max.sh
+#sudo ./mk_s905x2_x96max_basic.sh
+#sudo ./mk_s905x2_x96max_plus.sh
+#sudo ./mk_s905x3_multi.sh
+#sudo ./mk_s905x3_multi_basic.sh
+#sudo ./mk_s905x3_multi_plus.sh
+#sudo ./mk_s905x3_multi_plusplus.sh
+#sudo ./mk_s912_zyxq.sh
+#sudo ./mk_s912_zyxq_basic.sh
+#sudo ./mk_s912_zyxq_plus.sh
+#sudo ./mk_s912_zyxq_plusplus.sh
+#sudo ./mk_s922x_gtking.sh
+#sudo ./mk_s922x_gtking_basic.sh
+#sudo ./mk_s922x_gtking_plus.sh
+#sudo ./mk_h6_vplus.sh
+#sudo ./mk_h6_vplus_basic.sh
+#sudo ./mk_h6_vplus_plus.sh
+#sudo ./mk_h6_vplus_plusplus.sh
+
 #旧内核新内核分开打包
 #12以后内核无法使用SFE，使用仅含FOL的固件进行打包
 #find ./*_plusplus.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/OP_ROOT_TGZ=\"openwrt/OP_ROOT_TGZ=\"F-openwrt/g' {}
