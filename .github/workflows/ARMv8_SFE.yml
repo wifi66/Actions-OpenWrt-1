@@ -23,7 +23,6 @@ env:
   DIY_P2_SH: diy-part2.sh
   MRG_ADD_SH: aarch64/ARMv8.sh
   Update_Ver_SH: aarch64/autoVersion.sh
-  Get_Imgs_SH: aarch64/getImgs.sh
   CONFIG_FILE: aarch64/ARMv8_SFE.config
 #   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
