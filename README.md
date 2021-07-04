@@ -1,6 +1,6 @@
 # Actions-OpenWrt
 
-使用GitHub Actions 构建 OpenWrt 镜像 （注：此仓库FOK于 [HoldOnBro](https://github.com/HoldOnBro/Actions-OpenWrt)）
+使用GitHub Actions 构建 OpenWrt 镜像 （注：此仓库FOK于 [HoldOnBro大佬](https://github.com/HoldOnBro/Actions-OpenWrt)）
 
 感谢 ***HoldOnBro***、***P3TERX***、***bin20088*** 和 ***8flippy***，这只是他们工作的结合。
 
@@ -14,7 +14,7 @@
 3. ~~**DOCKER_PASSWORD**(Optional, if you don't need an aarch64 docker img) , which is actually not the password for your dockerhub account but the **Access Token** generated from dockerhub Account Settings.~~
 4. **Telegram notify secrets**(Optional, but remember to comment out relational action in ymls) , **TELEGRAM_TOKEN** for your bot token and **TELEGRAM_TO** for your personal id. [click here for more information](https://github.com/marketplace/actions/telegram-notify)
 
-[P3TERX大佬写的中文教程|Usage Guide in Chinese](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
+[P3TERX大佬写的中文教程|](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
 
 ## Some Hints
