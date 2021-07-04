@@ -1,6 +1,6 @@
 # Actions-OpenWrt
 
-使用GitHub Actions 构建 OpenWrt 镜像 （注：此仓库FOK于 [HoldOnBro大佬](https://github.com/HoldOnBro/Actions-OpenWrt)）
+使用GitHub Actions 构建 OpenWrt 镜像 （注：此仓库FOK于 [HoldOnBro大佬](https://github.com/HoldOnBro/Actions-OpenWrt)）[P3TERX大佬的中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
 感谢 ***HoldOnBro***、***P3TERX***、***bin20088*** 和 ***8flippy***，这只是他们工作的结合。
 
@@ -13,9 +13,6 @@
 2. **DOCKER_USERNAME** (可选，如果您不需要 aarch64 docker img)是你的 dockerhub 用户名.
 3. **DOCKER_PASSWORD** (可选，如果您不需要 aarch64 docker img)，这实际上不是你 dockerhub 帐户的密码，而是从 dockerhub 帐户设置生成的 **Access Token** 。
 4. **Telegram notify secrets** (可选，但记得在 ymls 中注释掉相关 action )， **TELEGRAM_TOKEN** 你的 bot token 和 **TELEGRAM_TO** 你的个人 id。[点击这里查看更多信息](https://github.com/marketplace/actions/telegram-notify)
-
-[P3TERX大佬写的中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
-
 
 ## Some Hints
 
