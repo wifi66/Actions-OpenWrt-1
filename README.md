@@ -1,6 +1,6 @@
 # Actions-OpenWrt
 
-Build OpenWrt image using GitHub Actions （注：此仓库FOK于 [HoldOnBro 大佬](https://github.com/HoldOnBro/Actions-OpenWrt)）
+Build OpenWrt image using GitHub Actions （注：此仓库FOK于 [HoldOnBro](https://github.com/HoldOnBro/Actions-OpenWrt)）
 
 Credit to ***P3TERX***, ***bin20088*** and ***flippy***，this is just a combination of their work.
 
