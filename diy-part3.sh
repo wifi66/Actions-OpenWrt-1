@@ -44,7 +44,7 @@ svn co https://github.com/immortalwrt/packages/trunk/utils/filebrowser package/f
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-gost package/luci-app-gost
 svn co https://github.com/immortalwrt/packages/trunk/net/gost package/gost
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-ssr-mudb-server package/luci-app-ssr-mudb-server
-svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-syncthing package/luci-app-syncthing0703
+svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-syncthing package/luci-app-syncthing
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-dnsfilter package/luci-app-dnsfilter
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash package/luci-app-openclash
