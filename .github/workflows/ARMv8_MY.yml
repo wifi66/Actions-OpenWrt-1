@@ -11,7 +11,7 @@ on:
     paths:
       - 'aarch64/ARMv8_MY.config'
   schedule:
-    - cron: 0 17 * * *
+    - cron: 0 16 * * *
   watch:
     types: started
 
