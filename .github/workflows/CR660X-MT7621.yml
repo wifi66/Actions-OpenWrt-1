@@ -1,4 +1,4 @@
-name: CR660X
+name: CR660X-MTK6721
 
 on:
   repository_dispatch:
