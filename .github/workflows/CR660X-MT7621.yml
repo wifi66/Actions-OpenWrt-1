@@ -11,7 +11,7 @@ on:
     paths:
       - 'CR660X/CR660X.config'
   schedule:
-    - cron: 0 17 * * *
+    - cron: 0 16 * * *
   watch:
     types: started
 
@@ -157,7 +157,8 @@ jobs:
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
-          小米 CR660X 系列设备打包固件。
+          小米 CR660X 系列设备打包固件
+	  默认IP：192.168.123.1 默认密码：password
           当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
           ${{ env.useVersionInfo }}
         artifacts: ${{ env.FIRMWARE }}/*
