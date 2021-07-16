@@ -64,5 +64,5 @@ jobs:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
           编译时间：$(date "+%Y%m%d-%H%M%S")
-          主题：Lean源码更新
-          开始编译底包
+          主题：Actions-OpenWrt
+          内容：Lean源码更新，开始编译底包
