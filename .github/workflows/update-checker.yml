@@ -62,3 +62,13 @@ jobs:
       run: |
         echo "Sending message to WeChat..."
         curl -s "https://sc.ftqq.com/${{ secrets.SERVERCHAN }}.send?text=Lean源码更新，开始编译底包" -d "&desp=*检查时间：*\`$(date "+%Y%m%d-%H%M%S")\`"
+        
+    - name: Telegram notification
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+          编译时间：$(date "+%Y%m%d-%H%M%S")
+          主题：Lean源码更新
+          开始编译底包
