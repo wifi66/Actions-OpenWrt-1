@@ -58,4 +58,4 @@ jobs:
         keep_minimum_runs: 1
 
     - name: TG notification
-      run: curl "https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage" -d "chat_id=${{ secrets.TELEGRAM_TO }}&text=[OpenWrt-Actions@$(date "+%Y-%m-%d+%H:%M:%S")] Lean源码更新,开始编译固件."
+      run: curl "https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage" -d "chat_id=${{ secrets.TELEGRAM_TO }}&text=[Actions-OpenWrt@$(date "+%Y-%m-%d+%H:%M:%S")] Lean源码更新,开始编译固件."
