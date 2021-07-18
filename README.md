@@ -24,7 +24,7 @@
   然后刷新``IP:19999``，它应该可以正常工作了。
   
 ### IP and Password
-  这些设备的默认 IP 可以在与它们关联的 bash scripts（``DEVICE_NAME.sh``）中找到。
+  这些设备的默认 IP 可以在与它们关联的 ymls 中找到。
   
   默认密码为``password``。
   
