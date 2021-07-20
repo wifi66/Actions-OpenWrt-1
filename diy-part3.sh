@@ -35,10 +35,10 @@ git clone https://github.com/project-lede/luci-app-godproxy.git package/luci-app
 
 # fix serverchan mediaid
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
-rm /package/luci-app-serverchan/luasrc/model/cbi/serverchan/setting.lua
-cp $GITHUB_WORKSPACE/general/serverchan/setting.lua /package/luci-app-serverchan/luasrc/model/cbi/serverchan/
-rm /package/luci-app-serverchan/root/usr/bin/serverchan/serverchan
-cp $GITHUB_WORKSPACE/general/serverchan/serverchan /package/luci-app-serverchan/root/usr/bin/serverchan/
+rm package/luci-app-serverchan/luasrc/model/cbi/serverchan/setting.lua
+cp $GITHUB_WORKSPACE/general/serverchan/setting.lua package/luci-app-serverchan/luasrc/model/cbi/serverchan/
+rm package/luci-app-serverchan/root/usr/bin/serverchan/serverchan
+cp $GITHUB_WORKSPACE/general/serverchan/serverchan package/luci-app-serverchan/root/usr/bin/serverchan/
 
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-rebootschedule package/luci-app-rebootschedule
