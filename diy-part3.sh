@@ -10,6 +10,7 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
+########################################################################################################################
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_generate
 # Default theme 
@@ -17,11 +18,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-opentomcat/g' feeds/luci/collections/l
 # readd cpufreq for aarch64 & Change to system
 sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci-app-cpufreq/Makefile
 sed -i 's/services/system/g' package/lean/luci-app-cpufreq/luasrc/controller/cpufreq.lua
-# fix serverchan mediaid
-rm /package/luci-app-serverchan/luasrc/model/cbi/serverchan/setting.lua
-cp $GITHUB_WORKSPACE/general/serverchan/setting.lua /package/luci-app-serverchan/luasrc/model/cbi/serverchan/
-rm /package/luci-app-serverchan/root/usr/bin/serverchan/serverchan
-cp $GITHUB_WORKSPACE/general/serverchan/serverchan /package/luci-app-serverchan/root/usr/bin/serverchan/
 
 # 移除不用软件包
 rm -rf feeds/packages/net/smartdns
@@ -36,9 +32,16 @@ git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-auto
 git clone https://github.com/kongfl888/luci-app-adguardhome.git package/luci-app-adguardhome
 git clone https://github.com/project-lede/luci-app-godproxy.git package/luci-app-godproxy
 #git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
+
+# fix serverchan mediaid
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
+rm /package/luci-app-serverchan/luasrc/model/cbi/serverchan/setting.lua
+cp $GITHUB_WORKSPACE/general/serverchan/setting.lua /package/luci-app-serverchan/luasrc/model/cbi/serverchan/
+rm /package/luci-app-serverchan/root/usr/bin/serverchan/serverchan
+cp $GITHUB_WORKSPACE/general/serverchan/serverchan /package/luci-app-serverchan/root/usr/bin/serverchan/
+
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
-#svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-rebootschedule package/luci-app-rebootschedule
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-rebootschedule package/luci-app-rebootschedule
 svn co https://github.com/sundaqiang/openwrt-packages/trunk/luci-app-services-wolplus package/luci-app-services-wolplus
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ipsec-server package/luci-app-ipsec-server
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-pptp-server package/luci-app-pptp-server
