@@ -18,6 +18,8 @@ sed -i 's/luci-theme-bootstrap/luci-theme-opentomcat/g' feeds/luci/collections/l
 # readd cpufreq for aarch64 & Change to system
 sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci-app-cpufreq/Makefile
 sed -i 's/services/system/g' package/lean/luci-app-cpufreq/luasrc/controller/cpufreq.lua
+#replace coremark.sh with the new one
+cp -f $GITHUB_WORKSPACE/general/coremark.sh feeds/packages/utils/coremark/
 
 # 移除不用软件包
 rm -rf feeds/packages/net/smartdns
