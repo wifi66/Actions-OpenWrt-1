@@ -10,7 +10,6 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-########################################################################################################################
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_generate
 # Default theme 
@@ -39,7 +38,7 @@ svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-rebootschedule package/luci-app-rebootschedule
 svn co https://github.com/sundaqiang/openwrt-packages/trunk/luci-app-services-wolplus package/luci-app-services-wolplus
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ipsec-server package/luci-app-ipsec-server
-svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-pptp-server package/luci-app-pptp-server
+#svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-pptp-server package/luci-app-pptp-server #lean中包含
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-fileassistant package/luci-app-fileassistant
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser package/luci-app-filebrowser
 svn co https://github.com/immortalwrt/packages/trunk/utils/filebrowser package/filebrowser
@@ -56,10 +55,10 @@ svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le package/
 
 #git clone https://github.com/rufengsuixing/luci-app-autoipsetadder.git package/luci-app-autoipsetadder
 #git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
-#git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman #未选择
+#git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
 #svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-socat package/luci-app-socat
 #git clone https://github.com/jerrykuku/luci-app-ttnode.git package/luci-app-ttnode
-#git clone https://github.com/mchome/openwrt-dogcom.git package/openwrt-dogcom #未选择
+#git clone https://github.com/mchome/openwrt-dogcom.git package/openwrt-dogcom
 
 # 添加vssr
 git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
@@ -109,9 +108,9 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-opentopd pac
 
 # 添加subweb&subconverter
 #svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ctcgfw/subweb package/subweb
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/quickjspp package/quickjspp
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/jpcre2 package/jpcre2
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/libcron/ package/libcron
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/quickjspp package/quickjspp
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/rapidjson package/rapidjson
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/subconverter package/subconverter
 
