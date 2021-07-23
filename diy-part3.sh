@@ -22,8 +22,10 @@ cp -f $GITHUB_WORKSPACE/general/coremark.sh feeds/packages/utils/coremark/
 
 # 移除不用软件包
 rm -rf feeds/packages/net/smartdns
+rm -rf package/lean/luci-app-netdata
+rm -rf package/lean/luci-theme-argon
 #rm -rf feeds/packages/net/kcptun
-#rm -rf package/lean/luci-theme-argon
+
 
 # 添加额外软件包
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
