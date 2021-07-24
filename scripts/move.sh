@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cp -f /home/xyz/lede/ARMv8*.config /home/xyz/Actions-OpenWrt/aarch64/
+cp -f /home/xyz/lede/CR660X*.config /home/xyz/Actions-OpenWrt/CR660X/
 
 cd /home/xyz/Actions-OpenWrt/
 git add ./*
