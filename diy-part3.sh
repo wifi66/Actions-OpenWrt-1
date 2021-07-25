@@ -38,6 +38,8 @@ rm -rf package/lean/luci-theme-argon
 # 添加额外软件包
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 git clone https://github.com/linkease/nas-packages.git package/nas
+git clone https://github.com/small-5/luci-app-adblock-plus package/luci-app-adblock-plus
+#svn co https://github.com/small-5/luci-app-adblock-plus package/luci-app-dnsfilter
 git clone https://github.com/sirpdboy/luci-app-advanced package/luci-app-advanced
 git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 git clone https://github.com/sirpdboy/luci-app-netdata package/luci-app-netdata
@@ -46,6 +48,7 @@ git clone https://github.com/project-lede/luci-app-godproxy.git package/luci-app
 #git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-serverchan
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-rebootschedule package/luci-app-rebootschedule
 svn co https://github.com/sundaqiang/openwrt-packages/trunk/luci-app-services-wolplus package/luci-app-services-wolplus
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ipsec-server package/luci-app-ipsec-server
@@ -56,20 +59,21 @@ svn co https://github.com/immortalwrt/packages/trunk/utils/filebrowser package/f
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-gost package/luci-app-gost
 svn co https://github.com/immortalwrt/packages/trunk/net/gost package/gost
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-ssr-mudb-server package/luci-app-ssr-mudb-server
+svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-socat package/luci-app-socat
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-syncthing package/luci-app-syncthing
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-dnsfilter package/luci-app-dnsfilter
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos package/luci-app-eqos
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash package/luci-app-openclash
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-smartdns package/luci-app-smartdns
 svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns package/smartdns #lean中包含,目录feeds/packages/net
-svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le package/smartdns-le #未选择
 
 #git clone https://github.com/rufengsuixing/luci-app-autoipsetadder.git package/luci-app-autoipsetadder
-#git clone https://github.com/garypang13/luci-app-bypass package/luci-app-bypass
 #git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
-#svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-socat package/luci-app-socat
-#git clone https://github.com/jerrykuku/luci-app-ttnode.git package/luci-app-ttnode
+#git clone https://github.com/mchome/luci-app-dogcom.git package/luci-app-dogcom
 #git clone https://github.com/mchome/openwrt-dogcom.git package/openwrt-dogcom
+#git clone https://github.com/jerrykuku/luci-app-ttnode.git package/luci-app-ttnode
+
+# 添加bypass
+#svn co https://github.com/kiddin9/openwrt-bypass/trunk/luci-app-bypass package/luci-app-bypass
+#svn co https://github.com/garypang13/openwrt-packages/trunk/smartdns-le package/smartdns-le #bypass需要
 
 # 添加vssr
 git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
