@@ -20,6 +20,17 @@ sed -i 's/services/system/g' package/lean/luci-app-cpufreq/luasrc/controller/cpu
 #replace coremark.sh with the new one
 cp -f $GITHUB_WORKSPACE/general/coremark.sh feeds/packages/utils/coremark/
 
+#修改晶晨宝盒默认配置
+# 1.Set the download repository of the OpenWrt files to your github.com （OpenWrt 文件的下载仓库）
+sed -i "s|ophub/amlogic-s9xxx-openwrt|rq1025330/Actions-OpenWrt|g" package/luci-app-amlogic/root/etc/config/amlogic
+# 2.Set the download path of the kernel in your github.com repository （OpenWrt 内核的下载路径）
+sed -i "s|amlogic-s9xxx/amlogic-kernel|BuildARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
+# 3.Modify the keywords of Tags in your github.com Releases （Releases 里 Tags 的关键字）
+sed -i "s|s9xxx_lede|ARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
+# 4.Modify the suffix of the OPENWRT files in your github.com Releases （Releases 里 OpenWrt 文件的后缀）
+sed -i "s|.img.gz|+_FOL+SFE.img.gz|g" package/luci-app-amlogic/root/etc/config/amlogic
+
+
 # 移除不用软件包
 rm -rf feeds/packages/net/smartdns
 rm -rf package/lean/luci-app-netdata
