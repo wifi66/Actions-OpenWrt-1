@@ -39,7 +39,7 @@ rm -rf package/lean/luci-theme-argon
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 git clone https://github.com/linkease/nas-packages.git package/nas
 git clone https://github.com/small-5/luci-app-adblock-plus package/luci-app-adblock-plus
-#svn co https://github.com/small-5/luci-app-adblock-plus package/luci-app-dnsfilter
+#git clone https://github.com/kiddin9/luci-app-dnsfilter package/luci-app-dnsfilter
 git clone https://github.com/sirpdboy/luci-app-advanced package/luci-app-advanced
 git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
 git clone https://github.com/sirpdboy/luci-app-netdata package/luci-app-netdata
