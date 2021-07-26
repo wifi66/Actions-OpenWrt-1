@@ -10,7 +10,7 @@ on:
       - master
     paths:
       - 'CR660X/CR660X.config'
-  schedule:
+#  schedule:
 #    - cron: 0 18 * * *
   watch:
     types: started
