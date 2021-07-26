@@ -12,7 +12,7 @@
 1. **RELEASES_TOKEN** ，这是你 Github 的 **Personal Access Token** 至少选择 *public_repo* 。
 2. **DOCKER_USERNAME** (可选，如果您不需要 aarch64 docker img)是你的 dockerhub 用户名.
 3. **DOCKER_PASSWORD** (可选，如果您不需要 aarch64 docker img)，这实际上不是你 dockerhub 帐户的密码，而是从 dockerhub 帐户设置生成的 **Access Token** 。
-4. **Telegram notify secrets** (可选，但记得在 ymls 中注释掉相关 action )， **TELEGRAM_TOKEN** 你的 bot token 和 **TELEGRAM_TO** 你的个人 id。[点击这里查看更多信息](https://github.com/marketplace/actions/telegram-notify)
+4. **Telegram notify secrets** (可选，但记得在 ymls 中注释掉相关 action )， **TELEGRAM_TOKEN** 你的 bot token 和 **TELEGRAM_TO** 你的个人 id。[点击查看更多信息](https://github.com/marketplace/actions/telegram-notify)
 
 ## Some Hints
 
