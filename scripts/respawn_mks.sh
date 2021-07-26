@@ -41,7 +41,7 @@ find ./*_basic.sh ./*_plus.sh -maxdepth 1 -path "*" | xargs -i sed -i '/^TGT_IMG
 
 #用MY打包
 find ./mk_s905d_n1.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/OP_ROOT_TGZ=\"openwrt/OP_ROOT_TGZ=\"MY-openwrt/g' {}
-find ./mk_s905d_n1.sh -maxdepth 1 -path "*" | xargs -i sed -i '/^TGT_IMG.*img\"$/s/\.img/\_FOL-MY\.img/g' {}
+find ./mk_s905d_n1.sh -maxdepth 1 -path "*" | xargs -i sed -i '/^TGT_IMG.*img\"$/s/\.img/\_FOL\+SFE-MY\.img/g' {}
 find ./mk_s905x3_multi.sh -maxdepth 1 -path "*" | xargs -i sed -i 's/OP_ROOT_TGZ=\"openwrt/OP_ROOT_TGZ=\"MY-openwrt/g' {}
 find ./mk_s905x3_multi.sh -maxdepth 1 -path "*" | xargs -i sed -i '/^TGT_IMG.*img\"$/s/\.img/\_FOL\+SFE-MY\.img/g' {}
 
