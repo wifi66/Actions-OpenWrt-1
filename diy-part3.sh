@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_generate
 # Default theme 
 sed -i 's/luci-theme-bootstrap/luci-theme-OpenTomato/g' feeds/luci/collections/luci/Makefile
 # readd cpufreq for aarch64 & Change to system
@@ -63,7 +63,7 @@ sed -i "s|amlogic-s9xxx/amlogic-kernel|BuildARMv8|g" package/luci-app-amlogic/ro
 #3.Modify the keywords of Tags in your github.com Releases （Releases 里 Tags 的关键字）
 sed -i "s|s9xxx_lede|ARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
 #4.Modify the suffix of the OPENWRT files in your github.com Releases （Releases 里 OpenWrt 文件的后缀）
-#sed -i "s|.img.gz|+_FOL+SFE.img.gz|g" package/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|.img.gz|+o_F-MY.img.gz|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 # 编译 po2lmo (如果有po2lmo可跳过)
