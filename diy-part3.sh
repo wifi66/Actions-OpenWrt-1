@@ -56,14 +56,14 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/smartdns package/smartd
 
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 # Modify the default configuration of Amlogic Box
-#1.Set the download repository of the OpenWrt files to your github.com （OpenWrt 文件的下载仓库）
-sed -i "s|ophub/amlogic-s9xxx-openwrt|rq1025330/Actions-OpenWrt|g" package/luci-app-amlogic/root/etc/config/amlogic
-#2.Set the download path of the kernel in your github.com repository （OpenWrt 内核的下载路径）
-sed -i "s|amlogic-s9xxx/amlogic-kernel|BuildARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
-#3.Modify the keywords of Tags in your github.com Releases （Releases 里 Tags 的关键字）
+# 1.Set the download repository of the OpenWrt files to your github.com （OpenWrt 文件的下载仓库）
+sed -i "s|https.*/amlogic-s9xxx-openwrt|https://github.com/rq1025330/Actions-OpenWrt|g" package/luci-app-amlogic/root/etc/config/amlogic
+# 2.Set the keywords of Tags in your github.com Releases （Releases 里 Tags 的关键字）
 sed -i "s|s9xxx_lede|ARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
-#4.Modify the suffix of the OPENWRT files in your github.com Releases （Releases 里 OpenWrt 文件的后缀）
+# 3.Set the suffix of the OPENWRT files in your github.com Releases （Releases 里 OpenWrt 文件的后缀）
 sed -i "s|.img.gz|MY.img.gz|g" package/luci-app-amlogic/root/etc/config/amlogic
+# 4.Set the download path of the kernel in your github.com repository （OpenWrt 内核的下载路径）
+sed -i "s|https.*/library|https://github.com/rq1025330/Actions-OpenWrt/tree/master/BuildARMv8|g" package/luci-app-amlogic/root/etc/config/amlogic
 
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 # 编译 po2lmo (如果有po2lmo可跳过)
