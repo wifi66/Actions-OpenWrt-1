@@ -2,7 +2,7 @@
 
 使用GitHub Actions 构建 OpenWrt 镜像 （注：此仓库FOK于 [HoldOnBro大佬](https://github.com/HoldOnBro/Actions-OpenWrt)）[P3TERX大佬的中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
-感谢 ***HoldOnBro***、***P3TERX***、***bin20088*** 和 ***8flippy***，这只是他们工作的结合。
+感谢 ***HoldOnBro***、***P3TERX***、***bin200888*** 和 ***flippy***，这只是他们工作的结合。
 
 发布的固件适用于S9xxx设备、amd64设备。
 
