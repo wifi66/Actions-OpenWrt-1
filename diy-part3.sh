@@ -24,6 +24,7 @@ cp -f $GITHUB_WORKSPACE/general/coremark.sh feeds/packages/utils/coremark/
 rm -rf feeds/packages/net/smartdns
 rm -rf package/lean/luci-app-netdata
 rm -rf package/lean/luci-theme-argon
+rm -rf package/lean/luci-app-pptp-server
 #rm -rf feeds/packages/net/kcptun
 
 # 添加额外软件包
@@ -41,7 +42,7 @@ git clone https://github.com/tty228/luci-app-serverchan.git package/luci-app-ser
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-rebootschedule package/luci-app-rebootschedule
 svn co https://github.com/sundaqiang/openwrt-packages/trunk/luci-app-services-wolplus package/luci-app-services-wolplus
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ipsec-server package/luci-app-ipsec-server
-#svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-pptp-server package/luci-app-pptp-server #lean中包含
+svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-pptp-server package/luci-app-pptp-server
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-fileassistant package/luci-app-fileassistant
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-filebrowser package/luci-app-filebrowser
 svn co https://github.com/immortalwrt/packages/trunk/utils/filebrowser package/filebrowser
