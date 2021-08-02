@@ -23,7 +23,7 @@ env:
   DIY_P2_SH: diy-part3.sh
   Update_Ver_SH: aarch64/autoVersion.sh
   CONFIG_FILE: aarch64/ARMv8_MY.config
-#   SSH_ACTIONS: false
+  SSH_ACTIONS: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   TZ: Asia/Shanghai
